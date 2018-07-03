@@ -16,13 +16,13 @@ defmodule Conconction.Trigger.Polling do
     end
   
   
-    defp auth_header(%{mode: :basic, credentials: credentials}), do: ["Authorization": "123123123"]
+    defp auth_header(%{mode: :basic, credentials: _credentials}), do: ["Authorization": "123123123"]
     defp auth_header(_no_auth), do: []
   
     defp interpolate_endpoint(endpoint, _), do: endpoint
     defp body(options) do
       case options do
-        [body: body] when is_map(body) -> Poision.encode(body)
+        [body: body] when is_map(body) -> Poison.encode(body)
         [body: body]  -> body
         _ -> nil
       end
