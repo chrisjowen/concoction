@@ -1,7 +1,7 @@
-defmodule Integration.Concoction.Schema.UserSpec do
+defmodule Concoction.UserSchemaSpec do
     use ESpec
 
-    alias Concoction.Schema.UserSchema
+    alias Concoction.UserSchema
     alias Concoction.Repo
 
     it "can save user" do

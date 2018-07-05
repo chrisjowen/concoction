@@ -1,17 +1,11 @@
-defmodule Concoction.Schema.DynamicSchema do
-
-
-
-
+defmodule Concoction.DynamicSchema do
     def schema(name, %{fields: fields} = blueprint) when is_atom(name) do
-
         quoted_fields =  Enum.map(fields, &make_field/1)
         keys = fields |> Enum.map(&keys/1)
-
+        
         Module.create(name, quote do
             import Ecto.Changeset
             use Ecto.Schema
- 
             schema "tests" do
                 unquote(quoted_fields)
             end

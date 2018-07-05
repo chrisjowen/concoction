@@ -1,4 +1,4 @@
-defmodule Concoction.Schema.UserSchema do
+defmodule Concoction.UserSchema do
     use Ecto.Schema
 
     schema "users" do

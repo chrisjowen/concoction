@@ -21,7 +21,7 @@ defmodule Concoction.Mixfile do
   def application do
     [
       mod: {Concoction.Application, []},
-      extra_applications: [:logger, :runtime_tools, :httpotion]
+      extra_applications: [:logger, :runtime_tools, :httpotion, :ueberauth, :ex_machina]
     ]
   end
 
@@ -41,10 +41,12 @@ defmodule Concoction.Mixfile do
       {:phoenix_html, "~> 2.10"},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
-      {:espec, "~> 1.5.1", only: :test},
+      {:ex_machina, "~> 2.2"},
+      {:espec_phoenix, "~> 0.6.10", only: :test},
       {:httpotion, "~> 3.1.0"},
       {:mix_test_watch, "~> 0.6", only: :dev, runtime: false},
-      {:phoenix_live_reload, "~> 1.0", only: :dev}
+      {:phoenix_live_reload, "~> 1.0", only: :dev},
+      {:ueberauth, "~> 0.4"}
     ]
   end
 

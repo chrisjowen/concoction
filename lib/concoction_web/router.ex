@@ -20,7 +20,10 @@ defmodule ConcoctionWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", ConcoctionWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", ConcoctionWeb do
+    pipe_through :api
+
+    get "/ingredient", IngredientController, :index
+    
+  end
 end
