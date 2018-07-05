@@ -56,3 +56,11 @@ config :concoction, Concoction.Repo,
   database: "dev",
   hostname: "localhost",
   pool_size: 10
+
+config :ueberauth, Ueberauth.Strategy.Github.OAuth,
+  client_id: "3be28d3ebff204a077c6",
+  client_secret: "df2427151a7c7d79ba725976654cfdb9a09b113a"
+
+config :ueberauth, Ueberauth.Strategy.Facebook.OAuth,
+  client_id: System.get_env("FACEBOOK_CLIENT_ID"),
+  client_secret: System.get_env("FACEBOOK_CLIENT_SECRET")

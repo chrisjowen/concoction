@@ -1,20 +1,47 @@
 # Concoction
 
-To start your Phoenix server:
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  * Install Node.js dependencies with `cd assets && npm install`
-  * Start Phoenix endpoint with `mix phx.server`
+IF/Trigger/Ingredient
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
+Triggers really have several parts:
 
-## Learn more
+- How is the data retrieved i.e. polling/webhook and auth to use
+- How to validated/filter the results retrieved will cause the trigger (conditional triggers?)
+- How to validated/filter the results retrieved will cause the trigger (conditional triggers?)
 
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+
+Notes:
+
+- Start with defining one for JIRA. And write all parts. 
+- Then go with genericing
+
+
+
+Polling:
+------
+1. How to get data (Auth/Keys/Etc) 
+3. How to process it (Recieving module/script)
+4. Where to publish to
+5. When to get it
+
+WebHook
+-------
+1. Where to post
+2. How to process it
+3. Where to publish to
+
+Needed:
+-------
+- A Fetcher 
+- A Processor
+- A Publisher
+- A Scheduler
+
+Processor should have a context + data. Context is the everything!!! Think plug baby!!
+
+Action
+-------
+1. How to retrieve from published
+2. How to process 
+3. What service to call

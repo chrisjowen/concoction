@@ -1,8 +1,8 @@
 version: '3'
 services:
   postgres:
-    image: postgres
-    # image: artifactory.global.standardchartered.com/postgres
+    # image: postgres
+    image: artifactory.global.standardchartered.com/postgres
     restart: always
     environment:
       POSTGRES_DB: dev
@@ -11,8 +11,8 @@ services:
     ports:
       - 5432:5432 
   postgres_test:
-    image: postgres
-    # image: artifactory.global.standardchartered.com/postgres
+    # image: postgres
+    image: artifactory.global.standardchartered.com/postgres
     restart: always
     environment:
       POSTGRES_DB: test
