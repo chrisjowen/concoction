@@ -7,9 +7,8 @@ defmodule ConcoctionWeb.IngredientControllerSpec do
 
         it "will create a schema" do
             conn = build_conn()
-            IO.inspect(jira_ingredient())
             path = ingredient_path(conn, :index)    
-            conn |> get(path) |> json_response(200) |> IO.inspect
+            conn |> get(path) |> json_response(200)
         end
     end
 end

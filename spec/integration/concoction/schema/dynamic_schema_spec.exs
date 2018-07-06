@@ -1,7 +1,6 @@
 defmodule Concoction.DynamicSchemaSpec do
     use ESpec
     alias Concoction.DynamicSchema
-    alias Concoction.Repo
 
     it "will create a schema" do
       blueprint = %{

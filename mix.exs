@@ -51,8 +51,7 @@ defmodule Concoction.Mixfile do
       # Dev/Test
       {:mix_test_watch, "~> 0.6", only: :dev, runtime: false},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
-      {:ueberauth, "~> 0.4"},
-      {:espec_phoenix, "~> 0.6.10", only: :test},      
+      {:espec_phoenix, "~> 0.6.10", only: :test}      
     ]
   end
 

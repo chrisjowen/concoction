@@ -1,8 +1,8 @@
-defmodule Conconction.Trigger.PollingSpec do
+defmodule Concoction.Trigger.FetcherSpec do
     use ESpec
-    alias Conconction.Trigger.Polling
+    alias Concoction.Trigger.Fetcher
   
-    let :polling_spec do
+    let :spec do
       %{
         endpoint: "http://www.google.com",
         auth: %{
@@ -14,15 +14,14 @@ defmodule Conconction.Trigger.PollingSpec do
       }
     end
   
-    it "Should create polling function from specification" do
-      spec = polling_spec()
-  
+    it "Should create function from specification" do
+      spec = spec()
       allow HTTPotion |> to(accept :get, fn(url, _options) ->
           expect(url) |> to(be(spec.endpoint))
       end)
   
-      poll = Polling.build(spec)
-      poll.([]) 
+      fetch_fun = Fetcher.build(spec)
+      fetch_fun.([]) 
     end
   
   end
