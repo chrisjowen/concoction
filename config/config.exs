@@ -51,6 +51,11 @@ config :ueberauth, Ueberauth.Strategy.ActiveDirectory.Ldap,
   user_dn: "vx.ldaps",
   password: "i3UfDq0GqI8wE"
 
+# config :concoction,
+#   deps:
+#     template_renderer: Concoction.LiquidTemplateRenderer
+
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
