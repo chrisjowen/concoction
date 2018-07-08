@@ -13,7 +13,7 @@ defmodule Concoction.Application do
       # Start the endpoint when the application starts
       supervisor(ConcoctionWeb.Endpoint, []),
       # Start your own worker by calling: Concoction.Worker.start_link(arg1, arg2, arg3)
-      # worker(Concoction.Worker, [arg1, arg2, arg3]),
+      worker(Concoction.Scheduler, [])
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

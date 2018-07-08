@@ -17,16 +17,14 @@ defmodule Concoction.Http.FetcherSpec do
       spec = spec()
 
       Fetcher.fetch(spec)
-
       expect(HTTPotion) |> to(accepted(:get, [endpoint(), [headers: [], body: nil]]))
     end
 
 
     it "Should post if specified" do
-      spec = put_in(spec().method, :post)
+      spec = put_in(spec().method, "post")
 
       Fetcher.fetch(spec)
-
       expect(HTTPotion) |> to(accepted(:post, [endpoint(), [headers: [], body: nil]]))
     end
 

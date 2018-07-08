@@ -63,7 +63,11 @@ defmodule Concoction.Mixfile do
       {:espec_phoenix, "~> 0.6.10", only: :test},
 
       # Templating
-      {:liquid, "~> 0.8.0"}
+      {:liquid, "~> 0.8.0"},
+
+      # Scheduling
+      {:quantum, "~> 2.2"},
+      {:timex, "~> 3.0"}
     ]
   end
 
@@ -77,7 +81,8 @@ defmodule Concoction.Mixfile do
     [
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      "espec": ["ecto.create --quiet", "ecto.migrate", "espec"]
+      "espec": ["ecto.create --quiet", "ecto.migrate", "espec"],
+  
     ]
   end
 end
