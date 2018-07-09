@@ -19,7 +19,7 @@ defmodule Concoction.Schema do
         use Ecto.Schema
 
         schema "connections" do
-            field :auth_type    , :string
+            field :auth_type, :string
             embeds_one :credentials, Credentials, on_replace: :update do
                 field(:username, :string)
                 field(:password, :string)
@@ -37,8 +37,19 @@ defmodule Concoction.Schema do
         schema "polls" do
             field :schedule                     , :string 
             field :params                       , :map 
+            belongs_to :action                  , Concoction.Schema.Action
+            timestamps()
+        end
+    end
+    
+    defmodule Action do
+        use Ecto.Schema
+
+        schema "actions" do
             belongs_to :connection              , Concoction.Schema.Connection
             belongs_to :endpoint                , Concoction.Schema.Endpoint
+            belongs_to :parent                  , Concoction.Schema.Action
+            has_many   :children                , Concoction.Schema.Action, foreign_key: :parent_id
             timestamps()
         end
     end

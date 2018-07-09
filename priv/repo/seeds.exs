@@ -11,4 +11,6 @@
 # and so on) as they will fail if something goes wrong.
 Code.require_file("spec/factories.ex") |> IO.inspect
 
-Concoction.Factory.insert(:poll) 
+action = Concoction.Factory.insert(:action) 
+triggered = Concoction.Factory.insert(:action, parent: action)
+Concoction.Factory.insert(:poll, action: action) 

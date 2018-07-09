@@ -13,7 +13,7 @@ defmodule Concoction.Http.Fetcher do
       nil -> {:error, "Invalid verb #{request.method}"}
       verb -> process_request(request, verb)
     end
-    with %HTTPotion.Response{}=http_response <- response, do: {:ok, http_response}
+    with %HTTPotion.Response{}=http_response <- response, do: {:ok, Poison.decode!(http_response.body)}
   end
 
   def process_request(request, method) do
